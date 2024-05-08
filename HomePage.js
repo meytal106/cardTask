@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/episode.css';
+import '../HomePage.css';
 
 const CreditCardForm = () => {
     const [cardNumberDisplay, setCardNumberDisplay] = useState('****************');
