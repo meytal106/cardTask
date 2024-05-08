@@ -1,16 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=josefin+Sans:wght@400;500;600;700&display=swap');
+
+* {
+ 
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+.card {
+    width: 300px;
+    height: 200px;
+    color: #fff;
+    cursor: pointer;
+    perspective: 1000px;
+    margin-bottom: 20px; 
+margin-top: 100px
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.map-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+   z-index: -1;
+}
+
+.card-no {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.card-holder {
+    font-size: 6px;
+    margin-top: 40px;
+}
+
+.name {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.bar {
+    background: #222;
+    margin-left: -30px;
+    margin-right: -30px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.card-cvv {
+    margin-top: 20px;
+}
+
+.card-cvv div {
+    flex: 1;
+}
+
+.card-cvv img {
+    width: 100%;
+    display: block;
+    line-height: 0;
+}
+
+.card-cvv p {
+    background: #fff;
+    color: #000;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+.card-text {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.signature {
+    margin-top: 30px;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-inner {
+    transform: rotateY(-180deg);
+}
 
 .form-container {
-    margin-top: 500px;
-    max-width: 500px;
+    max-width: 400px;
+    margin: 20px auto;
+    margin-top: -60px;
+    padding: 20px;
+    padding-top: 100px;
+
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+}
+.container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: -20px;
 }
 
 .form-group input {
@@ -34,10 +164,45 @@
     border-radius: 5px;
     background-color: #007bff;
     color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 16px
 }
 
-.form-group button:hover {
-    background-color: #0056b3;
+.expiry-cvv-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+    width: calc(50% - 5px); 
+}
+.submit-button{
+    margin-top: 15px;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+
+}
+.holderOnTheCard, .ExpiresOnTheCard {
+    display: flex;
+    align-items: center; 
+    margin-bottom: -40px; 
+    font-size: 10px;
+
+}
+
+.holderOnTheCard {
+    justify-content: flex-start; 
+}
+
+.ExpiresOnTheCard {
+    margin-top: 30px;
+    justify-content: flex-end; 
 }
